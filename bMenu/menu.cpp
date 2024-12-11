@@ -12,13 +12,6 @@ void sortingAsc();
 void sortingDsc();
 void tukar(int *a, int *b);
 
-void tukar(int *a, int *b)
-{
-  int t = *a;
-  *a = *b;
-  *b = t;
-}
-
 int main()
 {
   char pl;
@@ -71,4 +64,23 @@ int main()
 
   } while (pl != '5');
   return 0;
+}
+
+void masukkanData()
+{
+  system("cls");
+    for (int i = 0; i < n; i++)
+    {
+        cout << "Masukkan data ke-" << (i + 1) << ": ";
+        cin >> arrdata[i];
+    }
+    cout << "Data berhasil dimasukkan.\n";
+    getch();
+}
+
+void tukar(int *a, int *b)
+{
+  int t = *a;
+  *a = *b;
+  *b = t;
 }
