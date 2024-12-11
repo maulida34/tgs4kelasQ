@@ -78,6 +78,19 @@ void masukkanData()
     getch();
 }
 
+void tampilkanData()
+{
+    system("cls");
+    cout << "Data yang dimasukkan:\n";
+    for (int i = 0; i < n; i++)
+    {
+        cout << arrdata[i] << " ";
+    }
+    cout << "\n";
+    getch();
+}
+
+
 void tukar(int *a, int *b)
 {
   int t = *a;
