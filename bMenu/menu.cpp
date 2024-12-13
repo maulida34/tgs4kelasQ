@@ -2,7 +2,6 @@
 #include <conio.h>
 using namespace std;
 
-
 int arrdata[100];
 int n;
 
@@ -17,11 +16,12 @@ int main()
   char pl;
   cout << "Masukkan jumlah data (maksimal 100): ";
   cin >> n; // Mengatur jumlah data di sini
-  if (n > 100) n = 100; // Batasi jumlah data maksimal 100
+  if (n > 100)
+    n = 100; // Batasi jumlah data maksimal 100
 
   do
   {
-    
+
     system("cls");
     cout << "Aplikasi sorting bubble" << "\n";
     cout << "1. masukkan data" << "\n";
@@ -31,7 +31,7 @@ int main()
     cout << "5. Exit" << "\n";
     cout << "Masukan angka :";
     pl = getch();
-    
+
     switch (pl)
     {
     case '1':
@@ -51,7 +51,7 @@ int main()
       /* code */
       break;
     case '5':
-       cout << "Terima kasih.\n";
+      cout << "Terima kasih.\n";
       /* code */
       break;
 
@@ -69,28 +69,26 @@ int main()
 void masukkanData()
 {
   system("cls");
-    for (int i = 0; i < n; i++)
-    {
-        cout << "Masukkan data ke-" << (i + 1) << ": ";
-        cin >> arrdata[i];
-    }
-    cout << "Data berhasil dimasukkan.\n";
-    getch();
+  for (int i = 0; i < n; i++)
+  {
+    cout << "Masukkan data ke-" << (i + 1) << ": ";
+    cin >> arrdata[i];
+  }
+  cout << "Data berhasil dimasukkan.\n";
+  getch();
 }
 
 void tampilkanData()
 {
-    system("cls");
-    cout << "Data yang dimasukkan:\n";
-    for (int i = 0; i < n; i++)
-    {
-        cout << arrdata[i] << " ";
-    }
-    cout << "\n";
-    getch();
+  system("cls");
+  cout << "Data yang dimasukkan:\n";
+  for (int i = 0; i < n; i++)
+  {
+    cout << arrdata[i] << " ";
+  }
+  cout << "\n";
+  getch();
 }
-
-
 void tukar(int *a, int *b)
 {
   int t = *a;
@@ -100,32 +98,32 @@ void tukar(int *a, int *b)
 
 void sortingAsc()
 {
-    for (int i = 0; i < n - 1; i++)
+  for (int i = 0; i < n - 1; i++)
+  {
+    for (int j = 0; j < n - i - 1; j++)
     {
-        for (int j = 0; j < n - i - 1; j++)
-        {
-            if (arrdata[j] > arrdata[j + 1])
-            {
-                tukar(&arrdata[j], &arrdata[j + 1]);
-            }
-        }
+      if (arrdata[j] > arrdata[j + 1])
+      {
+        tukar(&arrdata[j], &arrdata[j + 1]);
+      }
     }
-    cout << "Data berhasil diurutkan secara ascending.\n";
-    getch();
+  }
+  cout << "Data berhasil diurutkan secara ascending.\n";
+  getch();
 }
 
 void sortingDsc()
 {
-    for (int i = 0; i < n - 1; i++)
+  for (int i = 0; i < n - 1; i++)
+  {
+    for (int j = 0; j < n - i - 1; j++)
     {
-        for (int j = 0; j < n - i - 1; j++)
-        {
-            if (arrdata[j] < arrdata[j + 1])
-            {
-                tukar(&arrdata[j], &arrdata[j + 1]);
-            }
-        }
+      if (arrdata[j] < arrdata[j + 1])
+      {
+        tukar(&arrdata[j], &arrdata[j + 1]);
+      }
     }
-    cout << "Data berhasil diurutkan secara descending.\n";
-    getch();
+  }
+  cout << "Data berhasil diurutkan secara descending.\n";
+  getch();
 }
