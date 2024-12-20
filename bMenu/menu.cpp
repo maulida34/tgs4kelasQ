@@ -1,9 +1,22 @@
 #include <iostream>
+#include <string>
 #include <conio.h>
 using namespace std;
-//menu
+// menu
 int data[100];
 int n;
+
+struct mahasiswa
+{
+    string nim;
+    string nama;
+    string alamat;
+    float ipk;
+};
+
+mahasiswa sikc[30];
+
+int pos = -1; // index
 
 void dMenu()
 {
@@ -84,25 +97,18 @@ int main()
         {
         case '1':
         {
+            pos++;
             system("cls");
-            cout << "Masukkan jumlah data (1-100): ";
-            cin >> n;
-            if (n > 0 && n <= 100)
-            {
-                cout << "Masukkan " << n << " angka:\n";
-                for (int i = 0; i < n; i++)
-                {
-                    cout << "Data ke-" << (i + 1) << ": ";
-                    cin >> data[i];
-                }
-                cout << "\nData berhasil dimasukkan!";
-            }
-            else
-            {
-                cout << "Jumlah data tidak valid. Harus antara 1-100.";
-            }
-            getch();
-            break;
+            fflush(stdin);
+            cout << "masukan nim: ";
+            getline(cin, sikc[pos].nim);
+            cout << "masukan nama: ";
+            getline(cin, sikc[pos].nama);
+            cout << "masukan alamat: ";
+            getline(cin, sikc[pos].alamat);
+            cout << "masukan ipk: ";
+            cin >> sikc[pos].ipk;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
         case '2':
         {
