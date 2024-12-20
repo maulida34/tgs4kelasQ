@@ -1,7 +1,7 @@
 #include <iostream>
 #include <conio.h>
 using namespace std;
-
+//menu
 int data[100];
 int n;
 
