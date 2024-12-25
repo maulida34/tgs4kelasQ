@@ -32,6 +32,19 @@ void tampilkanData(int p)
     cout << sikc[p].nim << " , " << sikc[p].nama << " , " << sikc[p].alamat << " , " << sikc[p].ipk << endl;
 }
 
+void perbaikanData(int p)
+{
+    system("cls");
+    fflush(stdin);
+    cout << "masukan nama: ";
+    getline(cin, sikc[p].nama);
+    cout << "masukan alamat: ";
+    getline(cin, sikc[p].alamat);
+    cout << "masukan ipk: ";
+    cin >> sikc[p].ipk;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
+
 int main()
 {
     int pos = -1;
@@ -66,7 +79,16 @@ int main()
         }
         case '3':
         {
-            
+            system("cls");
+            fflush(stdin);
+            cout << "masukan nama: ";
+            getline(cin, sikc[p].nama);
+            cout << "masukan alamat: ";
+            getline(cin, sikc[p].alamat);
+            cout << "masukan ipk: ";
+            cin >> sikc[p].ipk;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            break;  
         }
         case '4':
         {
