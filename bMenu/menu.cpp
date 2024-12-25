@@ -45,6 +45,22 @@ void perbaikanData(int p)
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
+void hapusData(int p) {
+    tampilkanData(p);
+    cout << "Masukkan nomor data yang ingin dihapus: ";
+    cin >> p;
+    p--;
+    if (p >= 0 && p <= pos) {
+        for (int i = p; i < pos; i++) {
+            sikc[i] = sikc[i + 1];
+        }
+        pos--;
+        cout << "Data berhasil dihapus!" << endl;
+    } else {
+        cout << "Nomor tidak valid!" << endl;
+    }
+}
+
 int main()
 {
     int pos = -1;
@@ -80,19 +96,27 @@ int main()
         case '3':
         {
             system("cls");
-            fflush(stdin);
-            cout << "masukan nama: ";
-            getline(cin, sikc[p].nama);
-            cout << "masukan alamat: ";
-            getline(cin, sikc[p].alamat);
-            cout << "masukan ipk: ";
-            cin >> sikc[p].ipk;
+            int index;
+            cout << "Masukkan nomor data yang ingin diperbaiki: ";
+            cin >> index;
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            break;  
+            if (index >= 0 && index <= pos) {
+                perbaikanData(index);
+            } else {
+                cout << "nomor tidak valid!\n";
+            }
+            break; 
         }
         case '4':
         {
-            
+            system("cls");
+            int index;
+            cout << "Masukkan nomor data yang ingin dihapus: ";
+            cin >> index;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            hapusData(index);
+            getch();
+            break; 
         }
         case '5':
             break;
